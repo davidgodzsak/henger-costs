@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BottomSheet",
+        "repositoryURL": "https://github.com/lucaszischka/BottomSheet",
+        "state": {
+          "branch": null,
+          "revision": "39f59cd641dfb407cb4033966e3be51237011da4",
+          "version": "2.8.0"
+        }
+      },
+      {
+        "package": "WrappingHStack",
+        "repositoryURL": "https://github.com/dkk/WrappingHStack",
+        "state": {
+          "branch": null,
+          "revision": "3e1eb1c4ad95bc690b15d7f2f521cb00d42b784a",
+          "version": "2.2.7"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "NumberInput.tapped(_:):NumberInput.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Float(value)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Emoji.random(_:):RandomEmoji.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FiringView.init():FiringView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UINavigationBar.appearance().items">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
