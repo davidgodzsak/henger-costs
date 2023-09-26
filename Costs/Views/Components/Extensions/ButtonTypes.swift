@@ -5,7 +5,7 @@ extension View {
     public func buttonStyle(color: Color = .black, font: Font = .jbBodyLarge) -> some View {
         self
             .foregroundColor(color)
-            .background(RoundedRectangle(cornerRadius: 16).style(withStroke: Color.black, lineWidth: 2, fill: Color.white))
+            .background(RoundedRectangle(cornerRadius: 16).style(withStroke: color, lineWidth: 2, fill: Color.white))
             .font(font)
     }
     

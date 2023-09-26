@@ -4,6 +4,7 @@ import AuthenticationServices
 struct LoginView: View {
     let users: [User]
     @State private var selectedUser: User?;
+    @EnvironmentObject var userHandler: UserHandler
     
     init(users: [User]) {
         self.users = users;
@@ -17,10 +18,22 @@ struct LoginView: View {
                 }
                 .padding(16)
             } else {
-                PinReader(user: $selectedUser.map(transform: {user in user!}))
+                let user = $selectedUser.map(transform: {user in user!})
+                
+                PinReader(user:user) { pin in
+                    return userHandler.logIn(user: selectedUser!, pin: pin)
+                }
             }
         }
         .navigationTitle("Bejelentkezés")
+        .toolbar{
+            if selectedUser != nil {
+                Button("Vissza") {
+                    selectedUser = nil
+                }
+                .font(.jbBody)
+            }
+        }
     }
 }
 

@@ -13,9 +13,13 @@ struct UserPicker: View {
             GeometryReader { gp in
                 LazyVGrid(columns: gridColumns, spacing: sp) {
                     ForEach(users, id: \.name) { user in
-                        Button { handler(user) } label: { Text(user.name) }
-                            .frame(width: gp.size.width / CGFloat(columns) - sp, height: 96)
-                            .buttonStyle(font: .jbBodyLarge)
+                        Button {
+                            handler(user)
+                        } label: {
+                            Text(user.name)
+                                .frame(width: gp.size.width / CGFloat(columns) - sp, height: 96)
+                                .buttonStyle(font: .jbBodyLarge)
+                        }
                     }
                 }
             }

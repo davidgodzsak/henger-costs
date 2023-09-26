@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Realm</key>
+	<dict>
+		<key>AppId</key>
+		<string>hengercosts-vonsn</string>
+		<key>BaseUrl</key>
+		<string>https://realm.mongodb.com</string>
+		<key>ApiKey</key>
+		<string>BwzYBy5e9dP0bAo2jeQc5mus9AZTqPJ9WKi9QI37keSyOcsSERj77uGgiQ6TWo7p</string>
+	</dict>
+</dict>
+</plist>

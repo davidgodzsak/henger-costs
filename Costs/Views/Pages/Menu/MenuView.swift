@@ -1,13 +1,39 @@
 import SwiftUI
+import RealmSwift
+import Foundation
 
 struct MenuView: View {
     let user: User
+    @EnvironmentObject var userHandler: UserHandler
+    
+    @ObservedResults(
+        Firing.self,
+        where: {$0.isBilled == false},
+        sortDescriptor: SortDescriptor(keyPath: "date")
+    ) var firings: Results<Firing>
+    
+    @ObservedResults(
+        CeramicClass.self,
+        where: {$0.isBilled == false},
+        sortDescriptor: SortDescriptor(keyPath: "date")
+    )
+    var classes: Results<CeramicClass>
+    
+    @ObservedResults(
+        ClayPurchase.self,
+        where: {$0.isBilled == false},
+        sortDescriptor: SortDescriptor(keyPath: "date")
+    ) var clayPurchases: Results<ClayPurchase>
+    
+    init(user: User) {
+        self.user = user
+    }
     
     var body: some View {
         HStack {
             VStack(spacing: 64) {
-                addMainMenu()
-                addLogoutButton()
+                MainMenu
+                LogoutButton
             }
             .padding(16)
         }
@@ -15,25 +41,25 @@ struct MenuView: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    private func addMainMenu() -> some View {
+    private var MainMenu: some View {
         return VStack(spacing: 16) {
-            NavigationLink(destination: FiringView(firings: Firing.sampleData)) {
+            NavigationLink(destination: FiringView(firings: Array(firings))) {
                 Text("🔥 Égetés").menu()
             }
-            NavigationLink(destination: ClayView(clayPurchases: ClayPurchase.sampleData)) {
+            NavigationLink(destination: ClayPurchaseView(clayPurchases: Array(clayPurchases))) {
                 Text("🍶 Agyag").menu()
             }
-            NavigationLink(destination: ClassesView(classes: CeramicClass.sampleData)) {
+            NavigationLink(destination: ClassesView(classes: Array(classes))) {
                 Text("⏰ Óra").menu()
             }
         }
     }
     
-    private func addLogoutButton() -> some View {
+    private var LogoutButton: some View {
         return Text("🚪 Kilépés").menu(color: .red)
             .frame(height: 80)
             .onTapGesture {
-                
+                userHandler.logOut()
             }
     }
 }

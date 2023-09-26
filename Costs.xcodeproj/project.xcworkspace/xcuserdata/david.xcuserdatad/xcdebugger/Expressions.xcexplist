@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "FiringPrice.firingPriceSettingsFor(_:):Prices.swift">
+      </ContextState>
+      <ContextState
+         contextName = "static Firing.priceForFiringItem(settings:wasGlazed:fireType:item:):Firing.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "exponentials&#10;            .map { $0.A * exp($0.B * Double(item.size))}">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "NumberInput.tapped(_:):NumberInput.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,15 +22,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static Emoji.random(_:):RandomEmoji.swift">
-      </ContextState>
-      <ContextState
          contextName = "FiringView.init():FiringView.swift">
          <PersistentStrings>
             <PersistentString
                value = "UINavigationBar.appearance().items">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in CostsApp.body.getter:App.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Array(users)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Emoji.random(_:):RandomEmoji.swift">
+      </ContextState>
+      <ContextState
+         contextName = "extractRealmConfig(_:):AppConfig.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
