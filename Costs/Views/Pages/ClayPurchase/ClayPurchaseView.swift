@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ClayPurchaseView: View {
-    let clayPurchases: [ClayPurchase]
+    let clayPurchases: [Purchase]
     private let dateFormatter = DateFormatter();
     
     @EnvironmentObject var userHandler: UserHandler
     @Environment(\.realm) var realm
     
-    init(clayPurchases: [ClayPurchase]) {
+    init(clayPurchases: [Purchase]) {
         self.clayPurchases = clayPurchases
         dateFormatter.dateFormat = "YYYY.MM.dd"
     }
@@ -18,8 +18,8 @@ struct ClayPurchaseView: View {
                 data: clayPurchases,
                 columns: [
                     TableColumn("Dátum", width: 180){ Text(dateFormatter.string(from: $0.date))},
-                    TableColumn("Agyag"){ Text($0.clay?.name ?? "")},
-                    TableColumn("Menyiség", width: 100, alignment: .trailing){ Text("\($0.amountInKg) kg")},
+                    TableColumn("Agyag"){ Text(($0.detail?.getValue(realm: realm) as? ClayPurchaseDetail)?.clay!.name ?? "")},
+                    TableColumn("Menyiség", width: 100, alignment: .trailing){ Text("\(($0.detail?.getValue(realm: realm) as? ClayPurchaseDetail)?.amountInKg ?? 0) kg")},
                     TableColumn("Ár", width: 150, alignment: .trailing){ Text("\($0.price) Ft")}
                 ],
                 deleteCoversion: onDelete
@@ -27,7 +27,7 @@ struct ClayPurchaseView: View {
             
             NavigationLink(
                 destination: ClayPurchaseDetailView(
-                    clayPurchase: ClayPurchase(value: ["userId": userHandler.loggedInUser!._id])
+                    clayPurchase: Purchase(value: ["userId": userHandler.loggedInUser?._id])
                 )
             ) {
                 Text("Hozzáadás")
@@ -44,7 +44,7 @@ struct ClayPurchaseView: View {
     
     private func onDelete(_ indexSet: IndexSet) {
         let selectedPurchases = indexSet.map { clayPurchases[$0]._id }
-        realm.objects(ClayPurchase.self)
+        realm.objects(Purchase.self)
             .filter { selectedPurchases.contains($0._id) }
             .forEach { purchase in
                 try! realm.write {
@@ -57,7 +57,7 @@ struct ClayPurchaseView: View {
 struct Clay_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ClayPurchaseView(clayPurchases: ClayPurchase.sampleData)
+            ClayPurchaseView(clayPurchases: Purchase.sampleClayPurchases)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

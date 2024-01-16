@@ -1,11 +1,12 @@
 import SwiftUI
 import RealmSwift
 
-struct ClassDetailView: View {
-    let ceramicClass: CeramicClass
+struct PrivateClassDetailView: View {
+    let privateClass: Purchase
     
     @Environment(\.presentationMode) var mode
-    @ObservedResults(CeramicClass.self) var classes : Results<CeramicClass>
+    
+    @Environment(\.realm) var realm
     @ObservedResults(
         Prices.self,
         sortDescriptor: SortDescriptor(keyPath: "_id", ascending: false)
@@ -23,14 +24,20 @@ struct ClassDetailView: View {
                 footer: HStack {
                     Spacer()
                     Button("Hozzáadás"){
-                        ceramicClass.numberOfPeople = people
-                        ceramicClass.timeInHours = time
-                        ceramicClass.price =  people * time * latestPrices.ceramicClassPricePerHour
+                        // TODO: DOES NOT WORK WITH EDIT
+                        let detail = PrivateClassDetail()
+                        detail.numberOfPeople = people
+                        detail.timeInHours = time
+                        privateClass.detail = AnyPurchaseDetail(detail)
+                        privateClass.price =  people * time * latestPrices.ceramicClassPricePerHour
                         
                         // TODO: HANDLE ERROR
-                        $classes.append(ceramicClass)
-                        
-                        mode.wrappedValue.dismiss()
+                        try! realm.write {
+                            realm.add(detail)
+                            realm.add(privateClass)
+                            
+                            mode.wrappedValue.dismiss()
+                        }
                     }
                         .padding(.vertical, 16).padding(.horizontal, 32)
                         .buttonStyle(font: .jbBodyLarge)
@@ -60,15 +67,16 @@ struct ClassDetailView: View {
                     }
                 }
             }
-            .padding(16)
-        } .navigationTitle("⏰ Óra hozzáadása")
+        }
     }
+    
 }
 
-struct AddClassView_Previews: PreviewProvider {
+struct PrivateClassDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ClassDetailView(ceramicClass: CeramicClass.sampleData[0])
+            PrivateClassDetailView(privateClass: Purchase.samplePrivateClasses.first!)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
+

@@ -8,11 +8,12 @@ enum FormInputField {
     case Count
 }
 
-struct FiringDetailView: View {
-    let firing: Firing
+struct FiringSinglePieceView: View {
+    let firing: Purchase
+    let detail: FiringPurchaseDetail
     
     @Environment(\.presentationMode) var mode
-    @ObservedResults(Firing.self) var firings : Results<Firing>
+    @Environment(\.realm) var realm
 
     @ObservedResults(
         Prices.self,
@@ -22,6 +23,7 @@ struct FiringDetailView: View {
     private var latestPrices: Prices { prices.first! }
 
     // TODO: use viewmodel
+    @State private var wholeKiln = false
     @State private var size: String = ""
     @State private var count: String = "1"
     @State private var selectedFiring: FireType = FireType.BisqueAndHigh
@@ -32,50 +34,64 @@ struct FiringDetailView: View {
     @State private var countBottomSheetPosition: BottomSheetPosition = .hidden
     @FocusState private var focusedField: FormInputField?
     
-    var body: some View {
-        Form {
-            SizeAndCountSection
-            FireTypeSection
-            GlazeSection
+    init(firing: Purchase) {
+        // TODO: EDIT DOES NOT WORK ON APP BECAUSE OF THIS
+        self.detail = FiringPurchaseDetail()
+        self.firing = firing
+        if(self.firing.detail == nil) {
+            self.firing.detail = AnyPurchaseDetail(detail)
         }
-        .onChange(of: focusedField, perform: showKeyboard)
+    }
+
+    var body: some View {
+        VStack {
+                Form {
+                    SizeAndCountSection
+                    FireTypeSection(combined: true, selectedFiring: $selectedFiring)
+                    GlazeSection
+                }
+                .onChange(of: focusedField, perform: showKeyboard)
+        }
         .numberBottomSheet(position: $sizeBottomSheetPosition, value: $size, header: "Méret")
         .numberBottomSheet(position: $countBottomSheetPosition, value: $count, header: "Darab", allowDecimal: false)
-        .navigationTitle("🔥 Égetés hozzáadása")
     }
     
     // TODO: SPLIT TO FILES
+    private var FiringItems : some View {
+        VStack {
+            if detail.items.count > 0 {
+                WrappingHStack(detail.items, id: \.self, spacing: .constant(8), lineSpacing:8) { option in
+                    HStack {
+                        Text(option.description)
+                        Button(action: {
+                            if let at = detail.items.firstIndex(where: { $0 == option }) {
+                                detail.items.remove(at: at)
+                            }
+                        }, label: {
+                            Image(systemName: "xmark").font(.system(size: 20))
+                        })
+                        .padding(8)
+                    }
+                    .padding(.leading, 12.0)
+                    .buttonStyle(font: .jbBodyLarge)
+                }
+            } else {
+                Text("Addj hozzá égetést...")
+                    .foregroundColor(Color.gray)
+                    .font(.jbBody)
+            }
+        }
+        .buttonStyle(BorderlessButtonStyle())
+        .padding(16)
+        .frame(maxWidth: .infinity, minHeight: 100)
+        .background(RoundedRectangle(cornerRadius: 16).fill(Color.black.opacity(0.1)))
+        .onTapGesture{ focusedField = .Size }
+    }
+    
     private var SizeAndCountSection : some View {
         Section(header: Text("Méretek és darabszám").font(.jbBody)) {
             VStack {
-                VStack {
-                    if firing.items.count > 0 {
-                        WrappingHStack(firing.items, id: \.self, spacing: .constant(8), lineSpacing:8) { option in
-                            HStack {
-                                Text(option.description)
-                                Button(action: {
-                                    if let at = firing.items.firstIndex(where: { $0 == option }) {
-                                        firing.items.remove(at: at)
-                                    }
-                                }, label: {
-                                    Image(systemName: "xmark").font(.system(size: 20))
-                                })
-                                .padding(8)
-                            }
-                            .padding(.leading, 12.0)
-                            .buttonStyle(font: .jbBodyLarge)
-                        }
-                    } else {
-                        Text("Addj hozzá égetést...")
-                            .foregroundColor(Color.gray)
-                            .font(.jbBody)
-                    }
-                }
-                .buttonStyle(BorderlessButtonStyle())
-                .padding(16)
-                .frame(maxWidth: .infinity, minHeight: 100)
-                .background(RoundedRectangle(cornerRadius: 16).fill(Color.black.opacity(0.1)))
-                .onTapGesture{ focusedField = .Size }
+                FiringItems
                 
                 HStack(alignment: VerticalAlignment.bottom ,spacing: 32) {
                     VStack(alignment: HorizontalAlignment.leading) {
@@ -113,7 +129,7 @@ struct FiringDetailView: View {
                         let item = FiredItem()
                         item.size = Double(toDouble) ?? 0
                         item.amount = Int(count) ?? 1
-                        firing.items.append(item)
+                        detail.items.append(item)
                         
                         size = ""
                         count = "1"
@@ -127,38 +143,23 @@ struct FiringDetailView: View {
         .padding(16)
     }
     
-    private var FireTypeSection: some View {
-        Section(header: Text("Égetés fajtája").font(.jbBody)) {
-            HStack {
-                ButtonMultiSelect<FireType>(
-                    // TODO: Firetype.values
-                    options: [
-                        FireType.BisqueAndHigh,
-                        FireType.BisqueAndLow,
-                        FireType.BisqueOnly,
-                        FireType.HighOnly,
-                        FireType.LowOnly
-                    ],
-                    selected: $selectedFiring
-                )
-            }.padding(16)
-        }
-    }
-    
     private var GlazeSection : some View {
         Section(
             header: Text("Henger máz").font(.jbBody),
             footer: HStack {
                 Spacer()
                 Button("Hozzáadás") {
-                    firing.fireType = selectedFiring
-                    firing.wasGlazed = usedGlaze == "használtam"
-                    firing.price = firing.priceForFirings(settings: latestPrices)
+                    detail.fireType = selectedFiring
+                    detail.wasGlazed = usedGlaze == "használtam"
+                    firing.detail = AnyPurchaseDetail(detail)
+                    firing.price = detail.calculatePriceForFiring(prices: latestPrices)
                     
                     // TODO: HANDLE ERROR
-                    $firings.append(firing)
-                    
-                    mode.wrappedValue.dismiss()
+                    try! realm.write{
+                        realm.add(detail)
+                        realm.add(firing)
+                        mode.wrappedValue.dismiss()
+                    }
                 }
                     .padding(.vertical, 16).padding(.horizontal, 32)
                     .buttonStyle(font: .jbBodyLarge)
@@ -188,10 +189,10 @@ struct FiringDetailView: View {
     }
 }
 
-struct FiringDetailView_Previews: PreviewProvider {
+struct FiringSinglePieceView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            FiringDetailView(firing: Firing())
+            FiringSinglePieceView(firing: Purchase.sampleFirings.first!)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

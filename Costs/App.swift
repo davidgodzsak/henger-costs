@@ -5,7 +5,7 @@ import Foundation
 private let appConfig: AppConfig = loadAppConfig()
 
 @main
-struct CostsApp: SwiftUI.App {
+ struct CostsApp: SwiftUI.App {
     @StateObject var userHandler = UserHandler()
     @StateObject var realmManager = RealmManager(appConfig.realmConfig)
     

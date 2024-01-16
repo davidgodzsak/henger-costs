@@ -7,23 +7,36 @@ struct MenuView: View {
     @EnvironmentObject var userHandler: UserHandler
     
     @ObservedResults(
-        Firing.self,
-        where: {$0.isBilled == false},
+        Purchase.self,
+        where: {$0.isBilled == false && $0.detail.typeName == "FiringPurchaseDetail"},
         sortDescriptor: SortDescriptor(keyPath: "date")
-    ) var firings: Results<Firing>
+    ) var firings: Results<Purchase>
     
     @ObservedResults(
-        CeramicClass.self,
-        where: {$0.isBilled == false},
+        Purchase.self,
+        where: {$0.isBilled == false && $0.detail.typeName == "WholeKilnDetail"},
+        sortDescriptor: SortDescriptor(keyPath: "date")
+    ) var kilns: Results<Purchase>
+    
+    @ObservedResults(
+        Purchase.self,
+        where: {$0.isBilled == false && $0.detail.typeName == "PrivateClassDetail"},
         sortDescriptor: SortDescriptor(keyPath: "date")
     )
-    var classes: Results<CeramicClass>
+    var classes: Results<Purchase>
     
     @ObservedResults(
-        ClayPurchase.self,
-        where: {$0.isBilled == false},
+        Purchase.self,
+        where: {$0.isBilled == false && $0.detail.typeName == "WorkshopPurchaseDetail"},
         sortDescriptor: SortDescriptor(keyPath: "date")
-    ) var clayPurchases: Results<ClayPurchase>
+    )
+    var workshops: Results<Purchase>
+    
+    @ObservedResults(
+        Purchase.self,
+        where: {$0.isBilled == false && $0.detail.typeName == "ClayPurchaseDetail"},
+        sortDescriptor: SortDescriptor(keyPath: "date")
+    ) var clayPurchases: Results<Purchase>
     
     init(user: User) {
         self.user = user
@@ -43,14 +56,14 @@ struct MenuView: View {
     
     private var MainMenu: some View {
         return VStack(spacing: 16) {
-            NavigationLink(destination: FiringView(firings: Array(firings))) {
+            NavigationLink(destination: FiringView(firings: Array(firings), kilns: Array(kilns))) { //todo remove Array
                 Text("🔥 Égetés").menu()
             }
             NavigationLink(destination: ClayPurchaseView(clayPurchases: Array(clayPurchases))) {
                 Text("🍶 Agyag").menu()
             }
             NavigationLink(destination: ClassesView(classes: Array(classes))) {
-                Text("⏰ Óra").menu()
+                Text("📓 Oktatás").menu()
             }
         }
     }

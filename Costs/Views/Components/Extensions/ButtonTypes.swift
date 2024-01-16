@@ -27,6 +27,6 @@ extension View {
 
 struct ButtonTypes_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationLink(destination: FiringView(firings: Firing.sampleData), label: { Text("🔥 Égetés").menu() })
+        NavigationLink(destination: FiringView(firings: Purchase.sampleFirings, kilns: []), label: { Text("🔥 Égetés").menu() })
     }
 }

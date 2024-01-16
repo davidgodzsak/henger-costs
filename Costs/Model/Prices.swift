@@ -6,7 +6,15 @@ class Prices: Object, ObjectKeyIdentifiable {
     @Persisted var ceramicClassPricePerHour: Int = 0
     @Persisted var firingPrice: FiringPrice?
     @Persisted var glazePrice: GlazePrice?
-    @Persisted var clayPrices: List<Clay>
+    @Persisted var clayPrices = List<Clay>()
+    @Persisted var kilnPrices = List<KilnPrices>()
+}
+
+class KilnPrices: EmbeddedObject {
+    @Persisted var kilnId: Kilns
+    @Persisted var bisque: Int = 0
+    @Persisted var high: Int = 0
+    @Persisted var low: Int = 0
 }
 
 class GlazePrice: EmbeddedObject {
@@ -50,7 +58,6 @@ class ExponentialFittingProperties: EmbeddedObject {
     @Persisted var A: Double = 0
     @Persisted var B: Double = 0
 }
-
 
 struct RuntimeError: Error {
     let message: String

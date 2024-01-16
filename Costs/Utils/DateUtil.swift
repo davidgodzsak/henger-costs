@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     func isWithinAMonth() -> Bool {
-        var today = Date();
+        let today = Date();
         return self >= Calendar.current.date(byAdding: .month, value: -1, to: today)!
     }
 }

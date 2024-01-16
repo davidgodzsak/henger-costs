@@ -3,29 +3,19 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "FiringPrice.firingPriceSettingsFor(_:):Prices.swift">
-      </ContextState>
-      <ContextState
-         contextName = "static Firing.priceForFiringItem(settings:wasGlazed:fireType:item:):Firing.swift">
+         contextName = "WholeKilnDetail.calculatePriceForKiln(prices:):WholeKilnPurchase.swift">
          <PersistentStrings>
             <PersistentString
-               value = "exponentials&#10;            .map { $0.A * exp($0.B * Double(item.size))}">
+               value = "prices.kilnPrices">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "NumberInput.tapped(_:):NumberInput.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "Float(value)">
+               value = "Array(prices.kilnPrices)">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FiringView.init():FiringView.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "UINavigationBar.appearance().items">
+               value = "kilnId">
+            </PersistentString>
+            <PersistentString
+               value = "prices.kilnPrices.map { $0.kilnId == self.kilnId }">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -38,10 +28,76 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static Emoji.random(_:):RandomEmoji.swift">
+         contextName = "AnyPurchaseDetail.value.getter:Purchase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "detailLookup">
+            </PersistentString>
+            <PersistentString
+               value = "typeName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NumberInput.tapped(_:):NumberInput.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Float(value)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #2 in FiringWholeKilnView.body.getter:FiringWholeKilnView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "latestPrices">
+            </PersistentString>
+            <PersistentString
+               value = "prices">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FiringPrice.firingPriceSettingsFor(_:):Prices.swift">
       </ContextState>
       <ContextState
          contextName = "extractRealmConfig(_:):AppConfig.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in variable initialization expression of static AnyPurchaseDetail.detailLookup:Purchase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type">
+            </PersistentString>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FiringView.init():FiringView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UINavigationBar.appearance().items">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Emoji.random(_:):RandomEmoji.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in closure #1 in FiringWholeKilnView.body.getter:FiringWholeKilnView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FiringWholeKilnView.body.getter:FiringWholeKilnView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "static Firing.priceForFiringItem(settings:wasGlazed:fireType:item:):Firing.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "exponentials&#10;            .map { $0.A * exp($0.B * Double(item.size))}">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -1,14 +1,19 @@
 import RealmSwift
+import Foundation
 
 class User: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var name: String = ""
-    @Persisted var pin: String = "0000"
     @Persisted var active: Bool = false
+    @Persisted var comments: List<String>
+    @Persisted var days: List<String>
     @Persisted var email: String = ""
-    @Persisted var rentPrice: Int = 0
-    
-//    @Persisted var atStudio: [Range]
+    @Persisted var groups: List<String>
+    @Persisted var hashedPassword: String?
+    @Persisted var monthlyFee: Int = 0
+    @Persisted var name: String = ""
+    @Persisted var otp: String?
+    @Persisted var pin: String = ""
+    @Persisted var startedAt: String = ""
 }
 
 extension User {

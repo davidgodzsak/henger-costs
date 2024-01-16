@@ -3,10 +3,10 @@ import RealmSwift
 import Foundation
 
 struct ClayPurchaseDetailView: View {
-    let clayPurchase: ClayPurchase
+    let clayPurchase: Purchase
     
     @Environment(\.presentationMode) var mode
-    @ObservedResults(ClayPurchase.self) var purchases : Results<ClayPurchase>
+    @Environment(\.realm) var realm
     @ObservedResults(
         Prices.self,
         sortDescriptor: SortDescriptor(keyPath: "_id", ascending: false)
@@ -34,14 +34,19 @@ struct ClayPurchaseDetailView: View {
                 footer: HStack {
                     Spacer()
                     Button("Hozzáadás"){
-                        clayPurchase.amountInKg = packages * selectedClay.bagWeight
-                        clayPurchase.clay = Clay(value: selectedClay)
+                        let detail =  ClayPurchaseDetail()
+                        detail.amountInKg = packages * selectedClay.bagWeight
+                        detail.clay = Clay(value: selectedClay)
+                        // TODO: SHOULD BE CALCULATED INSIDE THE PURCHASE DETAIL
                         clayPurchase.price =  Int(round(Double(packages * selectedClay.bagWeight) * selectedClay.pricePerKg))
+                        clayPurchase.detail = AnyPurchaseDetail(detail)
                         
                         // TODO: HANDLE ERROR
-                        $purchases.append(clayPurchase)
-                        
-                        mode.wrappedValue.dismiss()
+                        try! realm.write {
+                            realm.add(detail)
+                            realm.add(clayPurchase)
+                            mode.wrappedValue.dismiss()
+                        }
                     }
                         .padding(.vertical, 16).padding(.horizontal, 32)
                         .buttonStyle(font: .jbBodyLarge)
@@ -65,7 +70,7 @@ struct ClayPurchaseDetailView: View {
 struct AddClayView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ClayPurchaseDetailView(clayPurchase: ClayPurchase())
+            ClayPurchaseDetailView(clayPurchase: Purchase(value: ["detail" : ClayPurchaseDetail()]))
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

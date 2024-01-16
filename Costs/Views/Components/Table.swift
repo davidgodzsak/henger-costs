@@ -72,7 +72,7 @@ struct Table<T>: View where T : Identifiable {
             let date = data[i]
             
             
-                if date is Deletable && (date as! Deletable).markedDeleted {
+                if date is Purchase && (date as! Purchase).markedDeleted {
                     Rectangle().frame(maxWidth: .infinity, maxHeight: 1, alignment: .center)
                 }
             HStack {
@@ -91,11 +91,11 @@ struct Table_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             Table(
-                data: ClayPurchase.sampleData,
+                data: Purchase.sampleClayPurchases,
                 columns: [
-                    TableColumn("Name"){ n in Text(n.clay?.name ?? "")},
-                    TableColumn("Amount"){ n in Text(String(n.amountInKg))},
-                    TableColumn("Price", alignment: .trailing){ n in Text(String(n.price))}
+                    TableColumn("Name"){ n in Text("WM")},
+                    TableColumn("Amount"){ n in Text("20 kg")},
+                    TableColumn("Price", alignment: .trailing){ n in Text(String(123))}
                 ]
             ) { indexSet in }
         }
