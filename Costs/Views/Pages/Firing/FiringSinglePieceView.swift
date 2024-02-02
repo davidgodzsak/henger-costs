@@ -10,7 +10,8 @@ private enum FormInputField {
 
 struct FiringSinglePieceView: View {
     let firing: Purchase
-    let detail: FiringPurchaseDetail
+    
+    @ObservedRealmObject private var detail: FiringPurchaseDetail
     
     @Environment(\.presentationMode) var mode
     @Environment(\.realm) var realm
@@ -66,6 +67,8 @@ struct FiringSinglePieceView: View {
                         Button(action: {
                             if let at = detail.items.firstIndex(where: { $0 == option }) {
                                 detail.items.remove(at: at)
+                                
+//                                (firing.detail as FiringPurchaseDetail?)?.items.remove(at: at)
                             }
                         }, label: {
                             Image(systemName: "xmark").font(.system(size: 20))
@@ -179,7 +182,6 @@ struct FiringSinglePieceView: View {
     
     private func showKeyboard(field: FormInputField?) {
            self.hideKeyboard()
-            print(field)
            if(field == .Count) {
                countBottomSheetPosition = .middle
                sizeBottomSheetPosition = .hidden

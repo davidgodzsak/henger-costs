@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Costs.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>2B5E4883CB1190285249BB7B0D7A7396E0479A8C</string>
+				<key>dateExpires</key>
+				<string>01/02/2025</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>632K6RMDY3.hu.hypercube.henger.costs</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>632K6RMDY3</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>Costs.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>029ee585-a0aa-46d8-81ac-4a4a5d4dbbce</string>
+				<key>dateExpires</key>
+				<string>01/02/2025</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: hu.hypercube.henger.costs</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>632K6RMDY3</string>
+				<key>name</key>
+				<string>Dávid Godzsák</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

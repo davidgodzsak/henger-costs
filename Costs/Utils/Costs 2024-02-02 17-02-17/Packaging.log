@@ -1,0 +1,139 @@
+2024-02-02 16:02:05 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fe919b1c120; archive(resolved)="<IDEArchive: 0x6000102c3240>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team(resolved)="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	Chain (16, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fe919b1c120; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionProcessingPipelineContext: 0x7fe919b19da0; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe915c1ac40; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe919b126f0; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe919b0d080; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe926abb8b0; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe919b0be10; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe926ac0e70; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe926a51f50; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007e1dac0; teamID='632K6RMDY3', teamName='Dávid Godzsák', teamType='Individual', username='godzsakdavid@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fe914a3de20; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="(null)">
+	<IDEDistributionContext: 0x7fe92ad272e0; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="(null)">
+	<IDEDistributionContext: 0x7fe914b92d50; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="(null)">
+	<IDEDistributionContext: 0x7fe9293cc200; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x6000165bb8a0>", team="(null)">
+	<IDEDistributionContext: 0x7fe926abb680; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="(null)", team="(null)">
+	<IDEDistributionContext: 0x7fe9293d2d20; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="(null)", team="(null)">
+	<IDEDistributionContext: 0x7fe92937cc90; archive = "<IDEArchive: 0x6000102c3240>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x7fe919b1c120>
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionCreateDestRootStep
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionCopyItemStep
+2024-02-02 16:02:05 +0000  Running /usr/bin/ditto '-V' '/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app' '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app'
+2024-02-02 16:02:05 +0000  >>> Copying /Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app 
+2024-02-02 16:02:05 +0000  copying file ./_CodeSignature/CodeResources ... 
+2024-02-02 16:02:05 +0000  3457 bytes for ./_CodeSignature/CodeResources
+2024-02-02 16:02:05 +0000  copying file ./Costs ... 
+2024-02-02 16:02:05 +0000  7862160 bytes for ./Costs
+2024-02-02 16:02:05 +0000  copying file ./JetBrainsMono-Thin.ttf ... 
+2024-02-02 16:02:05 +0000  202076 bytes for ./JetBrainsMono-Thin.ttf
+copying file ./JetBrainsMono-Bold.ttf ... 
+2024-02-02 16:02:05 +0000  210128 bytes for ./JetBrainsMono-Bold.ttf
+2024-02-02 16:02:05 +0000  copying file ./JetBrainsMono-Regular.ttf ... 
+2024-02-02 16:02:05 +0000  203952 bytes for ./JetBrainsMono-Regular.ttf
+2024-02-02 16:02:05 +0000  copying file ./Assets.car ... 
+2024-02-02 16:02:05 +0000  120176 bytes for ./Assets.car
+2024-02-02 16:02:05 +0000  copying file ./AppIcon76x76@2x~ipad.png ... 
+2024-02-02 16:02:05 +0000  9729 bytes for ./AppIcon76x76@2x~ipad.png
+2024-02-02 16:02:05 +0000  copying file ./Config.plist ... 
+2024-02-02 16:02:05 +0000  201 bytes for ./Config.plist
+2024-02-02 16:02:05 +0000  copying file ./embedded.mobileprovision ... 
+2024-02-02 16:02:05 +0000  16514 bytes for ./embedded.mobileprovision
+2024-02-02 16:02:05 +0000  copying file ./Info.plist ... 
+2024-02-02 16:02:05 +0000  1585 bytes for ./Info.plist
+2024-02-02 16:02:05 +0000  copying file ./PkgInfo ... 
+2024-02-02 16:02:05 +0000  8 bytes for ./PkgInfo
+2024-02-02 16:02:05 +0000  /usr/bin/ditto exited with 0
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionEmbedProfileStep
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionInfoPlistStep
+2024-02-02 16:02:05 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2024-02-02 16:02:05 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2024-02-02 16:02:05 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2024-02-02 16:02:05 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionSymbolsStep
+2024-02-02 16:02:05 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionAppThinningStep
+2024-02-02 16:02:05 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionArchThinningStep
+2024-02-02 16:02:05 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app/Costs' '-verify_arch' 'arm64e'
+2024-02-02 16:02:05 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2024-02-02 16:02:05 +0000  Skipping architecture thinning for item "Costs" because arch "arm64e" wasn't found
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionODRStep
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionStripXattrsStep
+2024-02-02 16:02:05 +0000  Running /usr/bin/xattr '-crs' '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app'
+2024-02-02 16:02:05 +0000  /usr/bin/xattr exited with 0
+2024-02-02 16:02:05 +0000  Processing step: IDEDistributionCodesignStep
+2024-02-02 16:02:05 +0000  Entitlements for <IDEDistributionItem: 0x600010235920; bundleID='hu.hypercube.henger.costs', path='<DVTFilePath:0x60004cdec3f0:'/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x60001c579590; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x600005c84780; name='Apple Development: Dávid Godzsák (34XA5NXPA2)', hash='0F104D1D50BF4B62815AD782D4893AF6D767CFD4', serialNumber='60D59AFE3F3933A8B44F77E072430042', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-02-02 15:33:22 +0000''>', entitlements='{
+    "application-identifier" = "632K6RMDY3.hu.hypercube.henger.costs";
+    "com.apple.developer.team-identifier" = 632K6RMDY3;
+    "get-task-allow" = 1;
+}', teamID='632K6RMDY3', identifier='hu.hypercube.henger.costs', executablePath='<DVTFilePath:0x600010228000:'/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app/Costs'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "632K6RMDY3.hu.hypercube.henger.costs";
+    "com.apple.developer.team-identifier" = 632K6RMDY3;
+    "get-task-allow" = 0;
+}
+2024-02-02 16:02:05 +0000  Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2024-02-02 16:02:05 +0000  Entitlements for <IDEDistributionItem: 0x600010235920; bundleID='hu.hypercube.henger.costs', path='<DVTFilePath:0x60004cdec3f0:'/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x60001c579590; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x600005ce9e00; name='Apple Development: Dávid Godzsák (34XA5NXPA2)', hash='0F104D1D50BF4B62815AD782D4893AF6D767CFD4', serialNumber='60D59AFE3F3933A8B44F77E072430042', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-02-02 15:33:22 +0000''>', entitlements='{
+    "application-identifier" = "632K6RMDY3.hu.hypercube.henger.costs";
+    "com.apple.developer.team-identifier" = 632K6RMDY3;
+    "get-task-allow" = 1;
+}', teamID='632K6RMDY3', identifier='hu.hypercube.henger.costs', executablePath='<DVTFilePath:0x600010228000:'/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app/Costs'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "632K6RMDY3.hu.hypercube.henger.costs";
+    "com.apple.developer.team-identifier" = 632K6RMDY3;
+    "get-task-allow" = 0;
+}
+2024-02-02 16:02:05 +0000  Writing entitlements for <IDEDistributionItem: 0x600010235920; bundleID='hu.hypercube.henger.costs', path='<DVTFilePath:0x60004cdec3f0:'/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x60001c579590; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x600005cea340; name='Apple Development: Dávid Godzsák (34XA5NXPA2)', hash='0F104D1D50BF4B62815AD782D4893AF6D767CFD4', serialNumber='60D59AFE3F3933A8B44F77E072430042', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-02-02 15:33:22 +0000''>', entitlements='{
+    "application-identifier" = "632K6RMDY3.hu.hypercube.henger.costs";
+    "com.apple.developer.team-identifier" = 632K6RMDY3;
+    "get-task-allow" = 1;
+}', teamID='632K6RMDY3', identifier='hu.hypercube.henger.costs', executablePath='<DVTFilePath:0x600010228000:'/Users/david/Library/Developer/Xcode/Archives/2024-02-02/Costs 02-02-2024, 16.54.xcarchive/Products/Applications/Costs.app/Costs'>', hardenedRuntime='0'>'> to: /var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/entitlements~~~pXldHi
+2024-02-02 16:02:05 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2B5E4883CB1190285249BB7B0D7A7396E0479A8C' '--entitlements' '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/entitlements~~~pXldHi' '--generate-entitlement-der' '--preserve-metadata=identifier,flags,runtime' '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app'
+2024-02-02 16:02:05 +0000  /var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app: replacing existing signature
+2024-02-02 16:02:14 +0000  /var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app: signed app bundle with Mach-O thin (arm64) [hu.hypercube.henger.costs]
+2024-02-02 16:02:14 +0000  /usr/bin/codesign exited with 0
+2024-02-02 16:02:14 +0000  Processing step: IDEDistributionZipODRItemStep
+2024-02-02 16:02:14 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2024-02-02 16:02:14 +0000  Processing step: IDEDistributionCreateIPAStep
+2024-02-02 16:02:14 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root' '/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Packages/Costs.ipa'
+2024-02-02 16:02:14 +0000  >>> Copying /var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root 
+2024-02-02 16:02:14 +0000  copying file ./Payload/Costs.app/_CodeSignature/CodeResources ... 
+2024-02-02 16:02:14 +0000  3457 bytes for ./Payload/Costs.app/_CodeSignature/CodeResources
+copying file ./Payload/Costs.app/Costs ... 
+2024-02-02 16:02:14 +0000  7862160 bytes for ./Payload/Costs.app/Costs
+copying file ./Payload/Costs.app/JetBrainsMono-Thin.ttf ... 
+2024-02-02 16:02:14 +0000  202076 bytes for ./Payload/Costs.app/JetBrainsMono-Thin.ttf
+copying file ./Payload/Costs.app/JetBrainsMono-Bold.ttf ... 
+2024-02-02 16:02:14 +0000  210128 bytes for ./Payload/Costs.app/JetBrainsMono-Bold.ttf
+2024-02-02 16:02:14 +0000  copying file ./Payload/Costs.app/JetBrainsMono-Regular.ttf ... 
+2024-02-02 16:02:14 +0000  203952 bytes for ./Payload/Costs.app/JetBrainsMono-Regular.ttf
+2024-02-02 16:02:14 +0000  copying file ./Payload/Costs.app/Assets.car ... 
+2024-02-02 16:02:14 +0000  120176 bytes for ./Payload/Costs.app/Assets.car
+copying file ./Payload/Costs.app/AppIcon76x76@2x~ipad.png ... 
+2024-02-02 16:02:14 +0000  9729 bytes for ./Payload/Costs.app/AppIcon76x76@2x~ipad.png
+copying file ./Payload/Costs.app/Config.plist ... 
+2024-02-02 16:02:14 +0000  201 bytes for ./Payload/Costs.app/Config.plist
+copying file ./Payload/Costs.app/embedded.mobileprovision ... 
+2024-02-02 16:02:14 +0000  14490 bytes for ./Payload/Costs.app/embedded.mobileprovision
+copying file ./Payload/Costs.app/Info.plist ... 
+2024-02-02 16:02:14 +0000  1585 bytes for ./Payload/Costs.app/Info.plist
+copying file ./Payload/Costs.app/PkgInfo ... 
+2024-02-02 16:02:14 +0000  8 bytes for ./Payload/Costs.app/PkgInfo
+2024-02-02 16:02:14 +0000  /usr/bin/ditto exited with 0
+2024-02-02 16:02:14 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2024-02-02 16:02:14 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2024-02-02 16:02:14 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2024-02-02 16:02:14 +0000  IDEDistributionItem init <DVTFilePath:0x60002cff8f50:'/var/folders/pw/6y3z0v29203_2gx3rgxrzx5r0000gn/T/XcodeDistPipeline.~~~kx0a1T/Root/Payload/Costs.app'>
+2024-02-02 16:02:15 +0000  Processing step: IDEDistributionCreateManifestStep
