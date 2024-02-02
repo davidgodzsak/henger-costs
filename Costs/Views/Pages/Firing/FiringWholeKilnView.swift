@@ -23,7 +23,30 @@ struct FiringWholeKilnView : View {
         Form {
             FireTypeSection(combined: false, selectedFiring: $selectedFiring)
             
-            Section(header: Text("Kemi").font(.jbBody)) {
+            Section(
+                header: Text("Kemi").font(.jbBody),
+                footer: HStack {
+                    Spacer()
+                    Button("Hozzáadás") {
+                        let detail = WholeKilnDetail()
+                        detail.fireType = selectedFiring
+                        detail.kilnId = selectedKiln
+                        wholeKiln.price = detail.calculatePriceForKiln(prices: latestPrices)
+                        wholeKiln.detail = AnyPurchaseDetail(detail)
+                        
+                        // TODO: HANDLE ERROR
+                        try! realm.write {
+                            realm.add(detail)
+                            realm.add(wholeKiln)
+                            mode.wrappedValue.dismiss()
+                        }
+                    }
+                        .padding(.vertical, 16).padding(.horizontal, 32)
+                        .buttonStyle()
+                        .buttonStyle(BorderlessButtonStyle())
+                }
+            )
+            {
                 HStack {
                     ButtonMultiSelect<Kilns>(
                         options: [Kilns.Borisz, Kilns.Priszcilla],
@@ -32,23 +55,5 @@ struct FiringWholeKilnView : View {
                 }.padding(16)
             }
         }
-            
-            Button("Hozzáadás") {
-                let detail = WholeKilnDetail()
-                detail.fireType = selectedFiring
-                detail.kilnId = selectedKiln
-                wholeKiln.price = detail.calculatePriceForKiln(prices: latestPrices)
-                wholeKiln.detail = AnyPurchaseDetail(detail)
-                
-                // TODO: HANDLE ERROR
-                try! realm.write {
-                    realm.add(detail)
-                    realm.add(wholeKiln)
-                    mode.wrappedValue.dismiss()
-                }
-            }
-                .padding(.vertical, 16).padding(.horizontal, 32)
-                .buttonStyle()
-                .buttonStyle(BorderlessButtonStyle())
     }
 }

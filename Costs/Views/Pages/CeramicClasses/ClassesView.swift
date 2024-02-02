@@ -69,7 +69,7 @@ struct ClassesView: View {
                     TableColumn("Dátum"){ Text(dateFormatter.string(from: $0.date))},
                     TableColumn("Fő"){ Text(String(($0.detail?.getValue(realm: realm) as? PrivateClassDetail)?.numberOfPeople ?? 0))},
                     TableColumn("Időtartam", alignment: .trailing){ Text("\(($0.detail?.getValue(realm: realm) as? PrivateClassDetail)?.timeInHours ?? 0) h")},
-                    TableColumn("Ár", alignment: .trailing){ Text("\($0.price) Ft")}
+                    TableColumn("Ár", alignment: .trailing){ Text("\($0.price.withTax()) Ft")}
                 ],
                 deleteCoversion: onDeleteClass
             )
@@ -84,7 +84,7 @@ struct ClassesView: View {
                     TableColumn("Dátum"){ Text(dateFormatter.string(from: $0.date))},
                     TableColumn("Fő"){ Text(String(($0.detail?.getValue(realm: realm) as? WorkshopPurchaseDetail)?.numberOfPeople ?? 0))},
                     TableColumn("Workshop díja", alignment: .trailing){ Text("\(($0.detail?.getValue(realm: realm) as? WorkshopPurchaseDetail)?.priceOfWorkshop ?? 0) Ft")},
-                    TableColumn("Ár", alignment: .trailing){ Text("\($0.price) Ft")}
+                    TableColumn("Ár", alignment: .trailing){ Text("\($0.price.withTax()) Ft")}
                 ],
                 deleteCoversion: onDeleteWorkshop
             )

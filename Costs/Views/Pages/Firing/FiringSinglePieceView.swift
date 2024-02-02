@@ -3,7 +3,7 @@ import WrappingHStack
 import BottomSheet
 import RealmSwift
 
-enum FormInputField {
+private enum FormInputField {
     case Size
     case Count
 }
@@ -179,6 +179,7 @@ struct FiringSinglePieceView: View {
     
     private func showKeyboard(field: FormInputField?) {
            self.hideKeyboard()
+            print(field)
            if(field == .Count) {
                countBottomSheetPosition = .middle
                sizeBottomSheetPosition = .hidden

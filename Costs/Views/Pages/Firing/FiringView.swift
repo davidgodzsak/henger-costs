@@ -69,9 +69,9 @@ struct FiringView: View {
                 TableColumn("Dátum", width: 110){
                     Text(dateFormatter.string(from: $0.date))
                 },
-                TableColumn("Kemi", width: 100, alignment: .trailing){ Text(($0.detail?.getValue(realm: realm) as? WholeKilnDetail)?.kilnId.description ?? Kilns.Borisz.description )},
-                TableColumn("Égetés", width: 100, alignment: .trailing){ Text(($0.detail?.getValue(realm: realm) as? WholeKilnDetail)?.fireType.description ?? FireType.HighOnly.description )},
-                TableColumn("Ár", width: 120, alignment: .trailing){ Text("\($0.price) Ft")}
+                TableColumn("Kemi"){ Text(($0.detail?.getValue(realm: realm) as? WholeKilnDetail)?.kilnId.description ?? Kilns.Borisz.description )},
+                TableColumn("Égetés"){ Text(($0.detail?.getValue(realm: realm) as? WholeKilnDetail)?.fireType.description ?? FireType.HighOnly.description )},
+                TableColumn("Ár", width: 120, alignment: .trailing){ Text("\($0.price.withTax()) Ft")}
             ],
             deleteCoversion: onDeleteKiln // TODO: https://www.mongodb.com/docs/realm/sdk/swift/swiftui/pass-realm-data-between-views/#pass-realm-objects-to-a-view
         )
@@ -87,7 +87,7 @@ struct FiringView: View {
                 TableColumn("Méretek"){ Text(verbatim: ($0.detail?.getValue(realm: realm) as? FiringPurchaseDetail)?.items.map { "\($0.description)"}.joined(separator: ", ") ?? "")},
                 TableColumn("Égetés", width: 100, alignment: .trailing){ Text(($0.detail?.getValue(realm: realm) as? FiringPurchaseDetail)?.fireType.description ?? "") },
                 TableColumn("Máz", width: 70, alignment: .trailing){ Text(($0.detail?.getValue(realm: realm) as? FiringPurchaseDetail)?.wasGlazed ?? false ? "van" : "nincs") },
-                TableColumn("Ár", width: 120, alignment: .trailing){ Text("\($0.price) Ft")}
+                TableColumn("Ár", width: 120, alignment: .trailing){ Text("\($0.price.withTax()) Ft")}
             ],
             deleteCoversion: onDeleteFire
         )

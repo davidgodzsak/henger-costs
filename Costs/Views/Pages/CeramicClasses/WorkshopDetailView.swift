@@ -2,6 +2,12 @@ import SwiftUI
 import RealmSwift
 import BottomSheet
 
+
+private enum FocusableField {
+    case price
+}
+
+
 struct WorkshopDetailView: View {
     let workshop: Purchase
     
@@ -17,11 +23,7 @@ struct WorkshopDetailView: View {
     @State private var people: Int = 1;
     @State private var priceOfWorkshop: String = "";
     @State private var bottomSheetPosition: BottomSheetPosition = .hidden
-    @FocusState private var focusedField: Bool
-    
-    init(workshop: Purchase) {
-        self.workshop = workshop
-    }
+    @FocusState private var focusedField: FocusableField?
     
     var body: some View {
         VStack {
@@ -62,26 +64,26 @@ struct WorkshopDetailView: View {
                             }
                             
                             VStack(alignment: HorizontalAlignment.leading) {
-                                Text("Workshop díja").font(.jbBodyLarge)
-                                Text("asdasd")
+                                Text("Workshop ár / fő").font(.jbBodyLarge)
+                                TextField("cm", text: $priceOfWorkshop)
+                                    .frame(maxWidth: .infinity)
                                     .padding(16)
-                                    .background(RoundedRectangle(cornerRadius: 16).fill(Color.black.opacity(0.03)))
-                                    .focused($focusedField)
+                                    .background(RoundedRectangle(cornerRadius: 16).strokeBorder(Color.black, lineWidth: 2))
+                                    .focused($focusedField, equals: .price)
                             }
                         }
                     }
                 }
-            }
-            .onChange(of: focusedField, perform: calcNumberInput)
+            }.onChange(of: focusedField, perform: calcNumberInput)
         }
+        .onTapGesture{ focusedField = nil }
         .numberBottomSheet(position: $bottomSheetPosition, value: $priceOfWorkshop, header: "Workshop díja")
     }
     
-    func calcNumberInput(it: Bool) {
-        if it == true {
+    private func calcNumberInput(it: FocusableField?) {
+        self.hideKeyboard()
+        if it == .price {
             bottomSheetPosition = .middle
-        } else {
-            bottomSheetPosition = .hidden
         }
     }
     

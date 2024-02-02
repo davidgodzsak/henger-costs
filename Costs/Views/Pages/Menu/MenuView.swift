@@ -62,7 +62,7 @@ struct MenuView: View {
             NavigationLink(destination: ClayPurchaseView(clayPurchases: Array(clayPurchases))) {
                 Text("🍶 Agyag").menu()
             }
-            NavigationLink(destination: ClassesView(classes: Array(classes))) {
+            NavigationLink(destination: ClassesView(classes: Array(classes), workshops: Array(workshops))) {
                 Text("📓 Oktatás").menu()
             }
         }

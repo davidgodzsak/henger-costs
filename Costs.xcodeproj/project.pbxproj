@@ -56,6 +56,7 @@
 		63B1ED8B2947F19C0070D34F /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1ED8A2947F19C0070D34F /* Table.swift */; };
 		63B1ED90294804AD0070D34F /* ClayPurchaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1ED8F294804AD0070D34F /* ClayPurchaseDetailView.swift */; };
 		63CAAE3D2989A6DE005DB371 /* FiringPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CAAE3C2989A6DE005DB371 /* FiringPurchase.swift */; };
+		63D112E12B573B5E00AB10F7 /* PriceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D112E02B573B5E00AB10F7 /* PriceUtil.swift */; };
 		63DAFFA82973690E00B61735 /* NumberBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DAFFA72973690E00B61735 /* NumberBottomSheet.swift */; };
 		63E1AA03295B94AD000CB0F0 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 63E1AA02295B94AD000CB0F0 /* BottomSheet */; };
 /* End PBXBuildFile section */
@@ -143,6 +144,7 @@
 		63B1ED8A2947F19C0070D34F /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		63B1ED8F294804AD0070D34F /* ClayPurchaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClayPurchaseDetailView.swift; sourceTree = "<group>"; };
 		63CAAE3C2989A6DE005DB371 /* FiringPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiringPurchase.swift; sourceTree = "<group>"; };
+		63D112E02B573B5E00AB10F7 /* PriceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUtil.swift; sourceTree = "<group>"; };
 		63DAFFA72973690E00B61735 /* NumberBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBottomSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +348,7 @@
 				63B1ED7C2947D2F20070D34F /* RandomEmoji.swift */,
 				630B77B029AE7B1C00FE4A51 /* DateUtil.swift */,
 				630B77B229AEC11500FE4A51 /* InputBottomSheetPosition.swift */,
+				63D112E02B573B5E00AB10F7 /* PriceUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -441,7 +444,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					63914D402937680600FCA40D = {
 						CreatedOnToolsVersion = 12.4;
@@ -526,6 +529,7 @@
 				63A422FA2984496000F9FFE5 /* UserHandler.swift in Sources */,
 				63B1ED7D2947D2F20070D34F /* RandomEmoji.swift in Sources */,
 				632229712AC5A3ED008DC07D /* WorkshopPurchase.swift in Sources */,
+				63D112E12B573B5E00AB10F7 /* PriceUtil.swift in Sources */,
 				630B77B329AEC11500FE4A51 /* InputBottomSheetPosition.swift in Sources */,
 				63914DA12937777E00FCA40D /* UserPicker.swift in Sources */,
 				635CF3812955EBCF0092D1D8 /* ShapeExtensions.swift in Sources */,
@@ -719,6 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"costs/Preview Content\"";
 				DEVELOPMENT_TEAM = 632K6RMDY3;
@@ -733,8 +738,9 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hu.hypercube.costs;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.hypercube.henger.costs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -749,6 +755,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"costs/Preview Content\"";
 				DEVELOPMENT_TEAM = 632K6RMDY3;
@@ -763,8 +770,9 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hu.hypercube.costs;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.hypercube.henger.costs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -20,7 +20,7 @@ struct ClayPurchaseView: View {
                     TableColumn("Dátum", width: 180){ Text(dateFormatter.string(from: $0.date))},
                     TableColumn("Agyag"){ Text(($0.detail?.getValue(realm: realm) as? ClayPurchaseDetail)?.clay!.name ?? "")},
                     TableColumn("Menyiség", width: 100, alignment: .trailing){ Text("\(($0.detail?.getValue(realm: realm) as? ClayPurchaseDetail)?.amountInKg ?? 0) kg")},
-                    TableColumn("Ár", width: 150, alignment: .trailing){ Text("\($0.price) Ft")}
+                    TableColumn("Ár", width: 150, alignment: .trailing){ Text("\($0.price.withTax()) Ft")}
                 ],
                 deleteCoversion: onDelete
             )
